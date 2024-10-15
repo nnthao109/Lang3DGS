@@ -1,0 +1,38 @@
+scene:
+  scene_path: "/home/thaonn/semantic-gaussians/trash/"
+  test_cameras: False
+  yaml_file: "/home/thaonn/Photo-SLAM/cfg/ORB_SLAM3/RGB-D/Replica/office0.yaml"
+  # json_file: "/home/thaonn/Photo-SLAM/results/office0/3981_shutdown/ply/cameras.json"
+  trajectory_file: "/home/thaonn/Photo-SLAM/results/office0/3981_shutdown/ply/cameras.json"
+  image_folder: "/home/thaonn/Photo-SLAM/data/data/Replica/office0/results/"
+  colmap_eval_hold: 8
+  downscale_ratio: 0.5
+  white_background: False
+  device: "cuda:0"
+# scene:
+# scene:
+#   scene_path: "/home/thaonn/gaussian-splatting/sample_data/db/drjohnson/"
+#   test_cameras: False
+#   colmap_images: "images"
+#   colmap_eval_hold: 8
+#   downscale_ratio: 0.5
+#   white_background: False
+#   device: "cuda:0"
+
+pipeline:
+  convert_shs_python: False
+  compute_cov3d_python: False
+  debug: False
+  seed: 0
+
+model:
+  sh_degree: 3
+  model_dir: "/home/thaonn/Photo-SLAM/results/office0/3981_shutdown/ply/"
+  dynamic: False
+  load_iteration: -1
+  device: "cuda:0"
+
+
+render:
+  fusion_dir: "/home/thaonn/semantic-gaussians/output_fushion_photoslam_2/0.pt"
+  model_2d: openseg # choose from openseg, lseg, samclip, vlpart
